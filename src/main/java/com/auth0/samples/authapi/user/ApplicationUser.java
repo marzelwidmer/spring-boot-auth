@@ -1,4 +1,4 @@
-package com.auth0.samples.authapi.task;
+package com.auth0.samples.authapi.user;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,12 +11,12 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class Task {
+public class ApplicationUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String description;
-	public Task(String description) {
-		this.description = description;
-	}
+	private String username;
+	private String password;
+
+
 }

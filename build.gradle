@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.4.RELEASE'
+		springBootVersion = '1.5.11.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -22,9 +22,20 @@ repositories {
 }
 
 dependencies {
+	compile('org.projectlombok:lombok')
+	compile("org.springframework.boot:spring-boot-starter-security")
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+
+	compile("io.jsonwebtoken:jjwt:0.7.0")
+
+
+	compile group: 'com.auth0', name: 'auth0-spring-security-api', version: '1.0.0'
+
+
 	compile('org.springframework.boot:spring-boot-starter')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile("org.springframework.boot:spring-boot-starter-web")
 	compile("org.springframework.boot:spring-boot-starter-data-jpa")
 	compile("org.hsqldb:hsqldb")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
 }
