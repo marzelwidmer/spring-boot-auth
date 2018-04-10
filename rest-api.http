@@ -3,7 +3,6 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json;charset=UTF-8
 
-
 ### registers a new user
 POST http://localhost:8080/users/sign-up
 Accept: */*
@@ -22,7 +21,18 @@ Content-Type: application/json;charset=UTF-8
 
 { "username": "admin", "password": "password"}
 
-###
+### Task with Autorization Token
 
 GET http://localhost:8080/tasks/
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUyNDE5ODYzNH0.9eoHuelIzXQNcoQ1pEndLZFPgauWPYJqbKDkaCRxxPSqgha72sq6aDygeE565Yogv7m6OknNS2mMaD51AqztOQ
+
+### Create a new task
+POST http://localhost:8080/tasks
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json;charset=UTF-8
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUyNDE5ODYzNH0.9eoHuelIzXQNcoQ1pEndLZFPgauWPYJqbKDkaCRxxPSqgha72sq6aDygeE565Yogv7m6OknNS2mMaD51AqztOQ
+
+{"description": "Buy watermelon"}
+
+###
